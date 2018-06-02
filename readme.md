@@ -24,53 +24,54 @@
 11. Select Primary and set the file system as NTFS.
 12. Click OK.
 13. Click Apply.
-14. Open a command prompt as administrator.
-15. In the command prompt, navigate to the folder you extracted the "install.wim - Extract.7z" file to.
-16. Run the command 
+14. Copy the UEFI files to the drive of the BOOT partition on the SD card.
+15. Open a command prompt as administrator.
+16. In the command prompt, navigate to the folder you extracted the "install.wim - Extract.7z" file to.
+17. Run the command 
 ```
 dism /apply-image /imagefile:install.wim /index:1 /applydir:<**the drive letter of the Windows partition on the SD card**>:\
 ```
-17. Run the command 
+18. Run the command 
 ```
 bcdboot <**the drive letter of the Windows partition on the SD card**>:\Windows /s <**the drive letter of the BOOT partition on the SD card**>: /f UEFI
 ```
-18. Run the command 
+19. Run the command 
 ```
 bcdedit /store <**the drive letter of the BOOT partition on the SD card**>:\EFI\Microsoft\Boot\bcd /set {default} testsigning on
 ```
-19. Run the command 
+20. Run the command 
 ```
 bcdedit /store <**the drive letter of the BOOT partition on the SD card**>:\EFI\Microsoft\Boot\bcd /set {default} nointegritychecks on
 ```
-20. Copy the finish.reg to the **drive of the Windows partition on the SD card.**
-21. Eject your SD card and insert it into your Raspberry Pi 3.
-22. Turn on your Raspberry Pi 3. It may take a couple of minutes (or longer) to boot.
-23. When you see the error "Windows installation cannot proceed", press SHIFT+F10. The command prompt will open.
-24. In the command prompt, enter 
+21. Copy the finish.reg to the **drive of the Windows partition on the SD card.**
+22. Eject your SD card and insert it into your Raspberry Pi 3.
+23. Turn on your Raspberry Pi 3. It may take a couple of minutes (or longer) to boot.
+24. When you see the error "Windows installation cannot proceed", press SHIFT+F10. The command prompt will open.
+25. In the command prompt, enter 
 ```
 mmc
 ```
-25. In mmc, click File, Add/Remove Snap-ins.
-26. Double-click Computer Management.
-27. Click Finish.
-28. Click Ok on the dialog box that says Event Viewer.
-29. Click Ok on the Add/Remove Snap-ins menu.
-30. In mmc, click Computer Management (Local), Local Users and Groups, Users.
-31. Double-click on the Administrator account.
-32. Uncheck Account is disabled.
-33. Right-click on the Administrator account and click Set Password.
-34. Click Proceed.
-35. Enter your password.
-36. Click Ok on the Set Password dialog box.
-37. Click Ok on the Local Users and Groups dialog box.
-38. Close mmc.
-39. Click No.
-40. In the command prompt, navigate to the folder you copied the finish.reg to.
-41. In the command prompt, enter 
+26. In mmc, click File, Add/Remove Snap-ins.
+27. Double-click Computer Management.
+28. Click Finish.
+29. Click Ok on the dialog box that says Event Viewer.
+30. Click Ok on the Add/Remove Snap-ins menu.
+31. In mmc, click Computer Management (Local), Local Users and Groups, Users.
+32. Double-click on the Administrator account.
+33. Uncheck Account is disabled.
+34. Right-click on the Administrator account and click Set Password.
+35. Click Proceed.
+36. Enter your password.
+37. Click Ok on the Set Password dialog box.
+38. Click Ok on the Local Users and Groups dialog box.
+39. Close mmc.
+40. Click No.
+41. In the command prompt, navigate to the folder you copied the finish.reg to.
+42. In the command prompt, enter 
 ```
 regedit finish.reg.
 ```
-42. Restart the Raspberry Pi or enter 
+43. Restart the Raspberry Pi or enter 
 ```
 shutdown /r /t 0
 ```
