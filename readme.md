@@ -1,12 +1,27 @@
-To build drivers you will need only the EWDK. Run the EWDK LaunchBuildEnv, navigate to a driver source directory and do:
-```
-buildme.cmd
-```
+Windows 10 on Raspberry Pi 3
 
-WinPE
------
-Copy contents of `\drivers` and `\winpe_stuff` to `\Windows\system32` inside `\sources\boot.wim` of a WinPE image.
 
-You will need to enable test signing in the bcd. E.g.:
-   bcdedit /store K:\efi\Microsoft\boot\bcd /set {default} testsigning yes
 
+Prerequisties
+
+
+Credits to:
+
+
+https://github.com/andreiw/RaspberryPiPkg
+
+
+
+https://github.com/andreiw/rpi3winstuff
+
+
+
+https://uup.rg-adguard.net/
+
+
+
+https://sourceforge.net/p/windows-10-...
+
+
+
+https://github.com/andreiw/RaspberryP...
