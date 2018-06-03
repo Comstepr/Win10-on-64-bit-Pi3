@@ -198,7 +198,8 @@ in the command prompt to restart it.
 | ------------- | ------------- |
 | Windows setup could not configure to run on this computer's hardware  | Compile the ISO and try again  |
 | The specified domain either does not exist or could not be contacted  | Compile the ISO and try again  |
-| BSOD - DRIVER_POWER_STATE_FAILURE  | Compile the ISO and try again  |
+| BSOD - DRIVER_POWER_STATE_FAILURE  | Remove all USB devices and restart Raspberry Pi  |
+| BSOD - INACCESSIBLE_BOOT_DEVICE  | Compile the ISo and try again  |
 
 
 
