@@ -1,5 +1,8 @@
 **Windows 10 on Raspberry Pi 3**
 
+Build: 17134.1 for arm64
+
+
 **Note: I am not responsible for anything that happens to your Raspberry Pi. The steps listed have not been tested and may not work.**
 **You can follow Davindra's tutorial, however this tutorial is step-by-step and may be clearer. In Davindra's tutorial, the ISO was compiled, however you don't have to compile the ISO if you use this tutorial. https://www.youtube.com/watch?v=c0VqVm8X_zQ 
 **Note: I am not Davindra**
